@@ -1,5 +1,7 @@
 package com.toibaonguyen.school_management.business_layer.services.impl;
 
+import com.toibaonguyen.school_management.business_layer.dtos.requests.UserCreationRequest;
+import com.toibaonguyen.school_management.business_layer.dtos.responses.UserCreationResponse;
 import com.toibaonguyen.school_management.business_layer.services.IUserService;
 import com.toibaonguyen.school_management.persistence_layer.entities.User;
 import com.toibaonguyen.school_management.persistence_layer.repositories.UserRepository;
@@ -11,7 +13,7 @@ public class UserService implements IUserService {
     @Autowired
     private UserRepository userRepository;
 
-    public User createNewUser(User user) {
+    public UserCreationResponse createNewUser(UserCreationRequest user) {
         User newUser = new User();
         newUser.setUsername(user.getUsername());
         newUser.setPassword(user.getPassword());
